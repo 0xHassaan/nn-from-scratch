@@ -185,3 +185,5 @@ for k in range(1000):
 
   print(k, loss)
   
+ypred = [n(x) for x in xs]
+print(ypred)
