@@ -37,7 +37,7 @@ for i in range(200):
     counts = logits.exp()
     probs = counts / counts.sum(1, keepdim=True)
 
-    loss = -probs[torch.arange(n), ys].log().mean()
+    loss = -probs[torch.arange(n), ys].log().mean() + 0.1 * (W**2).mean()
 
     W.grad = None
     loss.backward()
